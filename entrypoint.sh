@@ -3,7 +3,11 @@
 if [ ${SERVE_DUCKYPANEL:-"unset"} != "unset" ]; then
     sed -i -e "/SERVE_DUCKYPANEL=/ s/# //" /duckyapi/config/production.env
     sed -i -e "/SERVE_DUCKYPANEL=/ s/=.*/=$SERVE_DUCKYPANEL/" /duckyapi/config/production.env
-fi
+f
+if [ ${BASE_URL:-"unset"} != "unset" ]; then
+    sed -i -e "/BASE_URL=/ s/# //" /duckyapi/config/production.env
+    sed -i -e "/BASE_URL=/ s/=.*/=$BASE_URL/" /duckyapi/config/production.env
+fii
 
 if [ ${TOKEN_SECRET:-"unset"} != "unset" ]; then
     sed -i -e "/TOKEN_SECRET=/ s/=.*/=$TOKEN_SECRET/" /duckyapi/config/production.env
