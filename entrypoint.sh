@@ -54,5 +54,4 @@ else
     sed -i -e "/QUEUE_UI_PASSWORD=/ s/^QUEUE/# QUEUE/" /duckyapi/config/production.env
 fi
 
-cat /duckyapi/config/production.env
 npm start
