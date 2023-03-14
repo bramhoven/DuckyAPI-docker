@@ -7,7 +7,7 @@ fi
 
 if [ ${BASE_URL:-"unset"} != "unset" ]; then
     sed -i -e "/BASE_URL=/ s/# //" /duckyapi/config/production.env
-    sed -i -e "/BASE_URL=/ s/=.*/=$BASE_URL/" /duckyapi/config/production.env
+    sed -i -e "|BASE_URL=| s|=.*|=$BASE_URL|" /duckyapi/config/production.env
 fi
 
 if [ ${TOKEN_SECRET:-"unset"} != "unset" ]; then
@@ -15,15 +15,15 @@ if [ ${TOKEN_SECRET:-"unset"} != "unset" ]; then
 fi
 
 if [ ${MONGODB_URL:-"unset"} != "unset" ]; then
-    sed -i -e "/MONGODB_URL=/ s/=.*/=$MONGODB_URL/" /duckyapi/config/production.env
+    sed -i -e "|MONGODB_URL=| s|=.*|=$MONGODB_URL|" /duckyapi/config/production.env
 fi
 
 if [ ${REDIS_URL:-"unset"} != "unset" ]; then
-    sed -i -e "/REDIS_URL=/ s/=.*/=$REDIS_URL/" /duckyapi/config/production.env
+    sed -i -e "|REDIS_URL=| s|=.*|=$REDIS_URL|" /duckyapi/config/production.env
 fi
 
 if [ ${WILDDUCK_API_URL:-"unset"} != "unset" ]; then
-    sed -i -e "/WILDDUCK_API_URL=/ s/=.*/=$WILDDUCK_API_URL/" /duckyapi/config/production.env
+    sed -i -e "|WILDDUCK_API_URL=| s|=.*|=$WILDDUCK_API_URL|" /duckyapi/config/production.env
 fi
 
 if [ ${WILDDUCK_API_TOKEN:-"unset"} != "unset" ]; then
@@ -35,11 +35,11 @@ if [ ${MX_RECORDS:-"unset"} != "unset" ]; then
 fi
 
 if [ ${SPF_CORRECT_VALUE:-"unset"} != "unset" ]; then
-    sed -i -e "/SPF_CORRECT_VALUE=/ s/=.*/=$SPF_CORRECT_VALUE/" /duckyapi/config/production.env
+    sed -i -e "|SPF_CORRECT_VALUE=| s|=.*|=$SPF_CORRECT_VALUE|" /duckyapi/config/production.env
 fi
 
 if [ ${SPF_REGEX:-"unset"} != "unset" ]; then
-    sed -i -e "/SPF_REGEX=/ s/=.*/=$SPF_REGEX/" /duckyapi/config/production.env
+    sed -i -e "|SPF_REGEX=| s|=.*|=$SPF_REGEX|" /duckyapi/config/production.env
 fi
 
 if [ ${DEFAULT_DKIM_SELECTOR:-"unset"} != "unset" ]; then
