@@ -39,7 +39,7 @@ if [ "${SPF_CORRECT_VALUE:-"unset"}" != "unset" ]; then
 fi
 
 if [ "${SPF_REGEX:-"unset"}" != "unset" ]; then
-    sed -i -e "/SPF_REGEX=/ s|=.*|=$SPF_REGEX|" /duckyapi/config/production.env
+    sed -i -e "/SPF_REGEX=/ s,=.*,=$SPF_REGEX," /duckyapi/config/production.env
 fi
 
 if [ "${DEFAULT_DKIM_SELECTOR:-"unset"}" != "unset" ]; then
